@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css" />
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+      <path
+        d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM144 256a144 144 0 1 1 288 0 144 144 0 1 1 -288 0zm144-64c0 35.3-28.7 64-64 64c-7.1 0-13.9-1.2-20.3-3.3c-5.5-1.8-11.9 1.6-11.7 7.4c.3 6.9 1.3 13.8 3.2 20.7c13.7 51.2 66.4 81.6 117.6 67.9s81.6-66.4 67.9-117.6c-11.1-41.5-47.8-69.4-88.6-71.1c-5.8-.2-9.2 6.1-7.4 11.7c2.1 6.4 3.3 13.2 3.3 20.3z"
+      />
+    </svg>
+  </head>
+  <body>
+    <div id="entrada">
+      <h1>Ahorcado</h1>
+      <button onclick="soloPlayer()">Un solo jugador</button>
+      <button onclick="multiPlayer()">Multijugador</button>
+      <button onclick="competitive()">Competitivo local</button>
+    </div>
+    <div id="goBack" style="display: none">
+      <button onclick="goLobby()">Volver a la entrada</button>
+    </div>
+    <div id="players"style="display: none">
+      <p>ESTA TODAVIA EN CONSTRUCCION</p>
+    </div>
+    <div id="introWord" style="display: none">
+      <h2>Introduce tu palabra Jugador 1</h2>
+      <input id="contra" type="password" name="password" />
+      <img
+        src="ahorcado/dhue8bn-0146a67c-c555-4778-9338-1446159fd84e.png"
+        onclick="miraContra()"
+      />
+      <button onclick="validateForm()">submit</button>
+    </div>
+    <div id="juego" style="display: none">
+      <h1 id="secretWordh1"></h1>
+      <h2 id="life"></h2>
+      <div id="doorContainer">
+        <img
+          id="ahorcado"
+          src="ahorcado/5702279a-5da8-4eea-bfe2-9d863b5bada1_source-aspect-ratio_default_0.jpg"
+        />
+        <img id="door" src="img/door9.png" />
+      </div>
+      <div id="teclado">
+        <button class="letra" onclick="botonPulsado('a')" id="a">a</button>
+        <button class="letra" onclick="botonPulsado('b')" id="b">b</button>
+        <button class="letra" onclick="botonPulsado('c')" id="c">c</button>
+        <button class="letra" onclick="botonPulsado('d')" id="d">d</button>
+        <button class="letra" onclick="botonPulsado('e')" id="e">e</button>
+        <button class="letra" onclick="botonPulsado('f')" id="f">f</button>
+        <button class="letra" onclick="botonPulsado('g')" id="g">g</button>
+        <button class="letra" onclick="botonPulsado('h')" id="h">h</button>
+        <button class="letra" onclick="botonPulsado('i')" id="i">i</button>
+        <button class="letra" onclick="botonPulsado('j')" id="j">j</button>
+        <button class="letra" onclick="botonPulsado('k')" id="k">k</button>
+        <button class="letra" onclick="botonPulsado('l')" id="l">l</button>
+        <button class="letra" onclick="botonPulsado('m')" id="m">m</button>
+        <button class="letra" onclick="botonPulsado('n')" id="n">n</button>
+        <button class="letra" onclick="botonPulsado('o')" id="o">o</button>
+        <button class="letra" onclick="botonPulsado('p')" id="p">p</button>
+        <button class="letra" onclick="botonPulsado('q')" id="q">q</button>
+        <button class="letra" onclick="botonPulsado('r')" id="r">r</button>
+        <button class="letra" onclick="botonPulsado('s')" id="s">s</button>
+        <button class="letra" onclick="botonPulsado('t')" id="t">t</button>
+        <button class="letra" onclick="botonPulsado('u')" id="u">u</button>
+        <button class="letra" onclick="botonPulsado('v')" id="v">v</button>
+        <button class="letra" onclick="botonPulsado('w')" id="w">w</button>
+        <button class="letra" onclick="botonPulsado('x')" id="x">x</button>
+        <button class="letra" onclick="botonPulsado('y')" id="y">y</button>
+        <button class="letra" onclick="botonPulsado('z')" id="z">z</button>
+      </div>
+      <div id="box">
+        <div>
+          <p id="jugador">Jugador2</p>
+          <div>
+            <p>Puntuacion:</p>
+            <p id="points"></p>
+          </div>
+          <div>
+            <p>Partidas Jugadas:</p>
+            <p id="games"></p>
+          </div>
+          <div>
+            <p>Partidas Ganadas:</p>
+            <p id="wins"></p>
+          </div>
+          <div>
+            <p>Puntuacion mas alta</p>
+            <p id="date">0</p>
+          </div>
+        </div>
+      </div>
+          <div style="display: none;" id="box2">
+      <div>
+        <p id="jugador2">Jugador3</p>
+        <div>
+          <p>Puntuacion:</p>
+          <p id="points2"></p>
+        </div>
+        <div>
+          <p>Partidas Jugadas:</p>
+          <p id="games2"></p>
+        </div>
+        <div>
+          <p>Partidas Ganadas:</p>
+          <p id="wins2"></p>
+        </div>
+        <div>
+          <p>Puntuacion mas alta</p>
+          <p id="date2">0</p>
+        </div>
+      </div>
+    </div>
+<div id="winMessage" style="display: none;">
+  <h1 id="winner"></h1>
+  <button onclick="otroGame()">OTRA PARTIDA</button>
+</div>
+    <script src="scripts.js"></script>
+    <audio id="cigarras" controls style="display: none">
+      <source
+        type="audio/mp3"
+        src="/sounds/ひぐらしの声 [Higurashi Sounds]  Higurashi no Naku Koro ni.mp3"
+      />
+    </audio>
+  </body>
+</html>

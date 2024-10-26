@@ -1,0 +1,89 @@
+@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rubik+Glitch&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Press+Start+2P");
+@import url("https://fonts.googleapis.com/css2?family=Special+Elite&display=swap");
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: black;
+  color: white;
+  font-family: "Special Elite", cursive; /* Change to your preferred font */
+}
+button {
+  font-family: "Special Elite";
+}
+.entrada,
+#players,
+#player1,
+#player2 {
+  margin: 20px;
+}
+
+h1 {
+  margin: 10px 0;
+}
+#goBack {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+button {
+  margin: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+#secretWordh1 {
+  display: flex;
+  width: auto;
+  align-self: center;
+}
+#life {
+  position: absolute;
+  top: 0px;
+}
+#eye {
+  color: white;
+}
+#teclado {
+  display: flex;
+}
+#juego {
+  justify-content: center;
+  align-content: center;
+  display: flex;
+  flex-wrap: wrap;
+}
+#doorContainer {
+  width: 238px;
+  height: 533px;
+  float: left;
+  display: block;
+}
+#door {
+  height: 533px;
+  object-fit: fill;
+  z-index: 3;
+  position: relative;
+}
+#ahorcado {
+  position: absolute;
+  z-index: 1;
+}
+#box {
+  background-color: blueviolet;
+}
+#winMessage {
+  color: black;
+  background-color: white;
+  z-index: 4;
+}
